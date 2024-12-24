@@ -2,6 +2,7 @@ import sys
 
 import pygame
 from settings import *
+from ship import *
 
 
 class AlienInvation:
@@ -18,6 +19,8 @@ class AlienInvation:
         )
         pygame.display.set_caption("Alien Invation")
 
+        self.ship = Ship(self)
+
         # 设置背景色
         self.bg_color = self.settings.bg_color
 
@@ -31,6 +34,7 @@ class AlienInvation:
 
             # 每次循环时都重绘屏幕
             self.screen.fill(self.bg_color)
+            self.ship.blitme()
 
             # 让最近绘制的屏幕可⻅
             pygame.display.flip()
